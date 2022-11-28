@@ -1,20 +1,14 @@
-/**
- * 
- */
 package main;
 
-/**
- * @author DevJh
- *
- */
+import crud.testCRUD;
+
 public class Main {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		System.out.println("Test ");
-
+		testCRUD a = new testCRUD();
+		a.prueba();
+		
 	}
 
 }
