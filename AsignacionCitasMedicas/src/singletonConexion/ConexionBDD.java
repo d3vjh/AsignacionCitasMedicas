@@ -17,20 +17,32 @@ public class ConexionBDD {
         user="postgres";
     }
 
+/**
+ * Establece la conexion utilizando el driver, la URL de la base de datos y las credenciales
+ */
 public void conectar(){
     try {
         Class.forName("org.postgresql.Driver");
-        conexion=DriverManager.getConnection("jdbc:postgresql://localhost:5432/EPS",user,password);
+        conexion=DriverManager.getConnection("jdbc:postgresql://localhost:5432/ejercicio_en_clase",user,password);
     }catch (SQLException | ClassNotFoundException e) {
         System.err.println("Error en conexion(conectar):" +e);
     }
 }
 
+/**
+ * Crea la instancia si no existe
+ */
 private synchronized static void createInstance(){
     if(INSTANCE==null){
         INSTANCE=new ConexionBDD();
     }
 }
+
+
+/**
+ * Obtenemos la conexion previamente establecida con la base de datos, de no existir, crea una
+ * @return Instance
+ */
 public static ConexionBDD getConexion(){
     if (INSTANCE==null) {
         createInstance();
@@ -38,6 +50,10 @@ public static ConexionBDD getConexion(){
     return INSTANCE;
 }
 
+/**
+ * Terminamos la conexion con la base de datos
+ * @throws SQLException
+ */
 public void desconectar() throws SQLException{
     try {
         conexion.close();

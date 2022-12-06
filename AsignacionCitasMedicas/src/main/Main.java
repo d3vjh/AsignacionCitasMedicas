@@ -1,13 +1,24 @@
 package main;
 
-import crud.testCRUD;
+import java.util.ArrayList;
+
+import abstractFactory.AbstractFactoryCRUD;
+import abstractFactory.FabricaPaciente;
+import crud.Read;
 
 public class Main {
+	
+	
 
 	public static void main(String[] args) {
-		System.out.println("Test ");
-		testCRUD a = new testCRUD();
-		a.prueba();
+
+		AbstractFactoryCRUD miFabrica;
+		Read read;
+		miFabrica = new FabricaPaciente("1234");
+		read = miFabrica.readRegistro();
+		ArrayList<Object> arrTemp = read.operacionCrud();
+		System.out.println("Si sirvio: "+arrTemp.get(2));
+		
 		
 	}
 
