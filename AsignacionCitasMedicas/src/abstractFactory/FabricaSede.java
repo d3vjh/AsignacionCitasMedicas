@@ -1,5 +1,7 @@
 package abstractFactory;
 
+import crud.Create;
+import crud.Delete;
 import crud.Read;
 import crud.ReadSede;
 
@@ -18,5 +20,19 @@ public class FabricaSede implements AbstractFactoryCRUD{
 		// TODO Auto-generated method stub
 		return new ReadSede(nombreSede);
 	}
-	
+
+
+@Override
+	public Create crearRegistro() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Delete deleteRegistro() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 }

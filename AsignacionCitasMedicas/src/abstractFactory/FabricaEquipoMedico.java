@@ -1,5 +1,7 @@
 package abstractFactory;
 
+import crud.Create;
+import crud.Delete;
 import crud.Read;
 import crud.ReadEquipoMedico;
 
@@ -17,5 +19,17 @@ public class FabricaEquipoMedico implements AbstractFactoryCRUD{
 	public Read readRegistro() {
 		// TODO Auto-generated method stub
 		return new ReadEquipoMedico(especialidad);
+	}
+	
+@Override
+	public Create crearRegistro() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Delete deleteRegistro() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
