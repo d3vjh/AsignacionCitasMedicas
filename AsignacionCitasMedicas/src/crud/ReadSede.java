@@ -9,32 +9,24 @@ import javax.swing.JOptionPane;
 
 import singletonConexion.ConexionBDD;
 
-/**
- * @author DevJh
- * Lee el paciente de la base de datos
- *
- */
-public class ReadPaciente implements Read{
+public class ReadSede implements Read{
 
 	ConexionBDD conexion;
 	private ArrayList<Object> array;
-	private final String cedula;
+	private final String nombreSede;
     private Statement st;
     private ResultSet rs;
-    
-    
-    
-    public ReadPaciente(String cedula) {
-		this.cedula = cedula;
-		array=null;
+	
+	public ReadSede(String nombreSede) {
+		// TODO Auto-generated constructor stub
+		this.nombreSede = nombreSede;
 	}
-    
-
+	
 	@Override
 	public ArrayList<Object> operacionCrud() {
-		array = new ArrayList<Object>();
+		// array = new ArrayList<Object>();
 		//El String toca actualizarlo
-		String sql = "select k_numiden, n_nombre, n_apellido from cli_compensar where k_numiden ='"+cedula+"';";
+		String sql = "select k_numiden, n_nombre, n_apellido from cli_compensar where k_numiden ='"+nombreSede+"';";
 		conexion = ConexionBDD.getConexion();
 		try {
 			conexion.conectar();
@@ -51,7 +43,7 @@ public class ReadPaciente implements Read{
 			JOptionPane.showMessageDialog(null, "El paciente no se encuentra registrado");
 		}
 		return array;
+	
 	}
-
 	
 }

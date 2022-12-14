@@ -9,32 +9,25 @@ import javax.swing.JOptionPane;
 
 import singletonConexion.ConexionBDD;
 
-/**
- * @author DevJh
- * Lee el paciente de la base de datos
- *
- */
-public class ReadPaciente implements Read{
-
+public class ReadMedicoConsultorio implements Read{
+	
+	
+	
 	ConexionBDD conexion;
 	private ArrayList<Object> array;
-	private final String cedula;
     private Statement st;
     private ResultSet rs;
-    
-    
-    
-    public ReadPaciente(String cedula) {
-		this.cedula = cedula;
-		array=null;
+	String atributoParametro;
+	
+	public ReadMedicoConsultorio(String atributoParametro) {
+		this.atributoParametro = atributoParametro;
 	}
-    
-
+	
 	@Override
 	public ArrayList<Object> operacionCrud() {
 		array = new ArrayList<Object>();
 		//El String toca actualizarlo
-		String sql = "select k_numiden, n_nombre, n_apellido from cli_compensar where k_numiden ='"+cedula+"';";
+		String sql = "select k_numiden, n_nombre, n_apellido from cli_compensar where k_numiden ='"+atributoParametro+"';";
 		conexion = ConexionBDD.getConexion();
 		try {
 			conexion.conectar();
@@ -52,6 +45,4 @@ public class ReadPaciente implements Read{
 		}
 		return array;
 	}
-
-	
 }

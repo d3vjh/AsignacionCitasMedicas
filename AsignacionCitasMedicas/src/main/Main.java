@@ -14,7 +14,7 @@ public class Main {
 
 		AbstractFactoryCRUD miFabrica;
 		Read read;
-		miFabrica = new FabricaPaciente("1234");
+		miFabrica = new FabricaPaciente("4780");
 		read = miFabrica.readRegistro();
 		ArrayList<Object> arrTemp = read.operacionCrud();
 		System.out.println("Si sirvio: "+arrTemp.get(2));
