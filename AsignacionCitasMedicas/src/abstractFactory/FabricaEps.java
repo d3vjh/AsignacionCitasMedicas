@@ -1,6 +1,7 @@
 package abstractFactory;
 
 import crud.Create;
+import crud.CreateEps;
 import crud.Delete;
 import crud.Read;
 import crud.ReadEps;
@@ -8,10 +9,28 @@ import crud.ReadEps;
 public class FabricaEps implements AbstractFactoryCRUD{
 	
 	private String nombre;
+	private String nombreNuevaSede;
+	private String direccion;
 	
+	
+	
+	/**
+	 * Constructor para leer una eps
+	 * @param nombre
+	 */
 	public FabricaEps(String nombre) {
 		// TODO Auto-generated constructor stub
 		this.nombre = nombre;
+	}
+	
+	/**
+	 * Constructor para crear una EPS
+	 * @param nombre
+	 */
+	public FabricaEps(String nombreNuevaEps, String direccion) {
+		// TODO Auto-generated constructor stub
+		this.nombreNuevaSede= nombreNuevaEps;
+		this.direccion = direccion;
 	}
 	
 	@Override
@@ -23,7 +42,7 @@ public class FabricaEps implements AbstractFactoryCRUD{
 	@Override
 	public Create crearRegistro() {
 		// TODO Auto-generated method stub
-		return null;
+		return new CreateEps(nombreNuevaSede, direccion);
 	}
 	
 	@Override

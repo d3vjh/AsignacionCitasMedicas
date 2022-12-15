@@ -1,5 +1,9 @@
 package crud;
 
-public class Create {
+import java.util.ArrayList;
+
+public interface Create{
+	
+	public ArrayList<Object> operacionCrud();
 
 }

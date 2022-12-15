@@ -9,31 +9,28 @@ import javax.swing.JOptionPane;
 
 import singletonConexion.ConexionBDD;
 
-public class ReadAgenda implements Read{
+public class CreateEps implements Create{
 	
 	
 	ConexionBDD conexion;
 	private ArrayList<Object> array;
-	private final String cedulaDoctor;
+	private final String nombreNuevaSede;
+	private final String direccion;
     private Statement st;
     private ResultSet rs;
 
 	
-	/**
-	 * Lee la agenda del doctor
-	 * @param cedulaDoctor
-	 */
-	public ReadAgenda(String cedulaDoctor) {
-		
-		this.cedulaDoctor = cedulaDoctor;
+	public CreateEps(String nombreNuevaSede, String direccion) {
 		// TODO Auto-generated constructor stub
+		this.nombreNuevaSede = nombreNuevaSede;
+		this.direccion = direccion;
 	}
 	
 	@Override
 	public ArrayList<Object> operacionCrud() {
 		array = new ArrayList<Object>();
 		//El String toca actualizarlo
-		String sql = "select k_numiden, n_nombre, n_apellido from cli_compensar where k_numiden ='"+cedulaDoctor+"';";
+		String sql = "select k_numiden, n_nombre, n_apellido from cli_compensar where k_numiden ='"+nombreNuevaSede+"';";
 		conexion = ConexionBDD.getConexion();
 		try {
 			conexion.conectar();
@@ -51,4 +48,5 @@ public class ReadAgenda implements Read{
 		}
 		return array;
 	}
+
 }

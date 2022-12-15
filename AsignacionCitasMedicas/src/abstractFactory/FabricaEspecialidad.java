@@ -1,6 +1,7 @@
 package abstractFactory;
 
 import crud.Create;
+import crud.CreateEspecialidad;
 import crud.Delete;
 import crud.Read;
 import crud.ReadEspecialidad;
@@ -23,7 +24,7 @@ public class FabricaEspecialidad implements AbstractFactoryCRUD{
 	@Override
 	public Create crearRegistro() {
 		// TODO Auto-generated method stub
-		return null;
+		return new CreateEspecialidad(atributoAConsultar);
 	}
 	
 	@Override

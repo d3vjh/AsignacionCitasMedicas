@@ -1,6 +1,7 @@
 package abstractFactory;
 
 import crud.Create;
+import crud.CreateAgenda;
 import crud.Delete;
 import crud.Read;
 import crud.ReadAgenda;
@@ -14,6 +15,11 @@ public class FabricaAgenda implements AbstractFactoryCRUD{
 		this.cedulaDoctor = cedulaDoctor;
 		
 	}
+	
+	
+	/**
+	 *Lee el registro de la agenda
+	 */
 	@Override
 	public Read readRegistro() {
 		// TODO Auto-generated method stub
@@ -23,7 +29,7 @@ public class FabricaAgenda implements AbstractFactoryCRUD{
 	@Override
 	public Create crearRegistro() {
 		// TODO Auto-generated method stub
-		return null;
+		return new CreateAgenda(cedulaDoctor);
 	}
 	
 	@Override

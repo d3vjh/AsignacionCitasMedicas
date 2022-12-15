@@ -9,25 +9,23 @@ import javax.swing.JOptionPane;
 
 import singletonConexion.ConexionBDD;
 
-public class ReadAgenda implements Read{
-	
-	
+public class CreateAgenda implements Create{
+
 	ConexionBDD conexion;
 	private ArrayList<Object> array;
 	private final String cedulaDoctor;
     private Statement st;
     private ResultSet rs;
-
 	
-	/**
-	 * Lee la agenda del doctor
-	 * @param cedulaDoctor
-	 */
-	public ReadAgenda(String cedulaDoctor) {
-		
+	
+    /**
+     * Crea una agenda para un Doctor
+     * @param cedulaDoctor
+     */
+    public CreateAgenda(String cedulaDoctor) {
 		this.cedulaDoctor = cedulaDoctor;
-		// TODO Auto-generated constructor stub
 	}
+	
 	
 	@Override
 	public ArrayList<Object> operacionCrud() {

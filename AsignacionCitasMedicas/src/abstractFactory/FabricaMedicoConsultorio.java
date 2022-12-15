@@ -1,6 +1,7 @@
 package abstractFactory;
 
 import crud.Create;
+import crud.CreateMedicoConsultorio;
 import crud.Delete;
 import crud.Read;
 import crud.ReadMedicoConsultorio;
@@ -22,7 +23,7 @@ public class FabricaMedicoConsultorio implements AbstractFactoryCRUD{
 @Override
 	public Create crearRegistro() {
 		// TODO Auto-generated method stub
-		return null;
+		return new CreateMedicoConsultorio(atributoParametro);
 	}
 
 @Override

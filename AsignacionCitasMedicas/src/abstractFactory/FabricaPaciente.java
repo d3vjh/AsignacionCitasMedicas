@@ -1,6 +1,7 @@
 package abstractFactory;
 
 import crud.Create;
+import crud.CreatePaciente;
 import crud.Delete;
 import crud.Read;
 import crud.ReadPaciente;
@@ -8,24 +9,24 @@ import crud.ReadPaciente;
 
 public class FabricaPaciente implements AbstractFactoryCRUD{
 
-	 private String cedula;
+	 private String cedulaPaciente;
 //	 private String nombre;
 //	 private String apellidos;
 	
 	
 	public FabricaPaciente(String cedula) {
-        this.cedula=cedula;
+        this.cedulaPaciente=cedula;
     }
 	
 	@Override
 	public Read readRegistro() {
-		return new ReadPaciente(cedula);
+		return new ReadPaciente(cedulaPaciente);
 	}
 	
 	@Override
 	public Create crearRegistro() {
 		// TODO Auto-generated method stub
-		return null;
+		return new CreatePaciente(cedulaPaciente);
 	}
 	
 	@Override

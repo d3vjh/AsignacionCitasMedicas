@@ -2,7 +2,7 @@ package crud;
 
 import java.util.ArrayList;
 
-public interface Delete {
+public interface Update {
 	
 	public ArrayList<Object> operacionCrud();
 }
