@@ -5,6 +5,7 @@ import crud.CreateEps;
 import crud.Delete;
 import crud.Read;
 import crud.ReadEps;
+import crud.Update;
 
 public class FabricaEps implements AbstractFactoryCRUD{
 	
@@ -51,4 +52,9 @@ public class FabricaEps implements AbstractFactoryCRUD{
 		return null;
 	}
 
+	@Override
+	public Update updateRegistro() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

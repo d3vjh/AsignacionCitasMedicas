@@ -39,6 +39,11 @@ public class FabricaAgenda implements AbstractFactoryCRUD{
 		return null;
 	}
 	
+	@Override
+	public Update updateRegistro() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 
 }

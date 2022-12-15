@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import abstractFactory.AbstractFactoryCRUD;
 import abstractFactory.FabricaPaciente;
 import crud.Read;
+import vista.NewJFrame1;
 import vista.VentanaIngresoPaciente;
 
 public class Main {
@@ -15,6 +16,9 @@ public class Main {
 
 		VentanaIngresoPaciente vi = new VentanaIngresoPaciente();
 		vi.setVisible(true);
+		
+		NewJFrame1 njf = new NewJFrame1();
+		njf.setVisible(true);
 		
 		
 		AbstractFactoryCRUD miFabrica;

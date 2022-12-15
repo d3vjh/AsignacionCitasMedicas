@@ -267,26 +267,8 @@ public class VentanaIngresoPaciente extends javax.swing.JFrame {
 				);
 		create = miFabrica.crearRegistro();
 		create.operacionCrud();
+
 		
-		String test = Integer.parseInt(numero_documento.getText())+"\n"+ 
-				tipo_documento.getText()+ "\n"+
-				Integer.parseInt(categoria.getText())+ "\n"+
-				nombre.getText()+"\n"+ apellido.getText()+ "\n"+
-				tipo.getText()+"\n"+
-				fecha_nacimiento.getText()+"\n"+
-				Long.parseLong(telefono.getText())+ "\n"+
-				correo.getText()+"\n"+
-				sexo.getText()+"\n"+
-				tipo_documento_afiliado.getText()+"\n"+
-				Integer.parseInt( numero_documento_afiliado.getText());
-		
-		System.out.println(test);
-		
-		System.out.println("Si llego hasta acá");
-//		read = miFabrica.readRegistro();
-//		ArrayList<Object> arrTemp = read.operacionCrud();
-//		System.out.println("Codigo"+arrTemp.get(0)+"\n Nombre: "+ arrTemp.get(1)+"\nApellido " +arrTemp.get(2)+"\n Tipo de afiliacion: "+arrTemp.get(3));
-//		System.out.println("Holaaa mundo");
 	}// GEN-LAST:event_crearActionPerformed
 
 	private void numero_documento_afiliadoActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_numero_documento_afiliadoActionPerformed

@@ -5,6 +5,7 @@ import crud.CreateSede;
 import crud.Delete;
 import crud.Read;
 import crud.ReadSede;
+import crud.Update;
 
 public class FabricaSede implements AbstractFactoryCRUD{
 
@@ -31,6 +32,12 @@ public class FabricaSede implements AbstractFactoryCRUD{
 
 	@Override
 	public Delete deleteRegistro() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	@Override
+	public Update updateRegistro() {
 		// TODO Auto-generated method stub
 		return null;
 	}

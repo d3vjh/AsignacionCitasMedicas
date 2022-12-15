@@ -5,6 +5,7 @@ import crud.CreateConsultorio;
 import crud.Delete;
 import crud.Read;
 import crud.ReadConsultorio;
+import crud.Update;
 
 public class FabricaConsultorio implements AbstractFactoryCRUD{
 
@@ -32,6 +33,12 @@ public class FabricaConsultorio implements AbstractFactoryCRUD{
 	
 	@Override
 	public Delete deleteRegistro() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	@Override
+	public Update updateRegistro() {
 		// TODO Auto-generated method stub
 		return null;
 	}

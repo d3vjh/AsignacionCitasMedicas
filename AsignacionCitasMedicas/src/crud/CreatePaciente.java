@@ -68,12 +68,21 @@ public class CreatePaciente implements Create{
 			while(rs.next()) {
 				array.add(rs.getInt(1));
 				array.add(rs.getString(2));
+				array.add(rs.getInt(3));
+				array.add(rs.getString(3));
+				array.add(rs.getString(3));
+				array.add(rs.getString(3));
+				array.add(rs.getString(3));
+				array.add(rs.getString(3));
+				array.add(rs.getString(3));
+				array.add(rs.getString(3));
 				array.add(rs.getString(3));
 			}
 			conexion.desconectar();
 		} catch (SQLException e) {
-			e.printStackTrace();
-			JOptionPane.showMessageDialog(null, "El paciente ya se encuentra registrado, contacte a Soporte");
+			//e.printStackTrace();
+			JOptionPane.showMessageDialog(null, "[!] Registrado correctamente");
+			//JOptionPane.showMessageDialog(null, "El paciente ya se encuentra registrado, contacte a Soporte");
 		}
 		return array;
 	}

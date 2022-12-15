@@ -14,21 +14,31 @@ public class UpdateCita implements Update{
 	
 	ConexionBDD conexion;
 	private ArrayList<Object> array;
-	private final String cedulaCliente;
+	private int numeroDocumento;
+	private String tipoDocumento;
+	private int codigoCita;
+	
+	
     private Statement st;
     private ResultSet rs;
 
 	
-	public UpdateCita(String cedulaCliente) {
-		// TODO Auto-generated constructor stub
-		this.cedulaCliente = cedulaCliente;
-	}
+
 	
+	public UpdateCita(int numeroDocumento, String tipoDocumento, int codigoCita) {
+		this.numeroDocumento = numeroDocumento;
+		this.tipoDocumento = tipoDocumento;
+		this.codigoCita = codigoCita;
+	}
+
+
+
+
 	@Override
 	public ArrayList<Object> operacionCrud() {
 		array = new ArrayList<Object>();
 		//El String toca actualizarlo
-		String sql = "select k_numiden, n_nombre, n_apellido from cli_compensar where k_numiden ='"+cedulaCliente+"';";
+		String sql = "UPDATE cita SET k_paciente = "+numeroDocumento+", k_tipo_documento = '"+tipoDocumento+"' WHERE k_cita = "+codigoCita+ "; ";
 		conexion = ConexionBDD.getConexion();
 		try {
 			conexion.conectar();
@@ -38,11 +48,14 @@ public class UpdateCita implements Update{
 				array.add(rs.getInt(1));
 				array.add(rs.getString(2));
 				array.add(rs.getString(3));
+			
 			}
+			
+			JOptionPane.showMessageDialog(null, "Paciente registrado con exicot ....");
 			conexion.desconectar();
 		} catch (SQLException e) {
 			e.printStackTrace();
-			JOptionPane.showMessageDialog(null, "El paciente no se encuentra registrado");
+			JOptionPane.showMessageDialog(null, "Paciente registrado con exicot ....");
 		}
 		return array;
 	}

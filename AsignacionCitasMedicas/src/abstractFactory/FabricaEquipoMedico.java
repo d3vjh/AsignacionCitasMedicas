@@ -5,6 +5,7 @@ import crud.CreateEquipoMedico;
 import crud.Delete;
 import crud.Read;
 import crud.ReadEquipoMedico;
+import crud.Update;
 
 public class FabricaEquipoMedico implements AbstractFactoryCRUD{
 	 
@@ -31,6 +32,11 @@ public class FabricaEquipoMedico implements AbstractFactoryCRUD{
 
 	@Override
 	public Delete deleteRegistro() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public Update updateRegistro() {
 		// TODO Auto-generated method stub
 		return null;
 	}

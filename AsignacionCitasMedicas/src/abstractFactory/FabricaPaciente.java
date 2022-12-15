@@ -8,6 +8,7 @@ import crud.Delete;
 import crud.Read;
 import crud.ReadPaciente;
 //Y asi con el resto del CRUD
+import crud.Update;
 
 public class FabricaPaciente implements AbstractFactoryCRUD{
 
@@ -67,6 +68,12 @@ public class FabricaPaciente implements AbstractFactoryCRUD{
 	
 	@Override
 	public Delete deleteRegistro() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	@Override
+	public Update updateRegistro() {
 		// TODO Auto-generated method stub
 		return null;
 	}
