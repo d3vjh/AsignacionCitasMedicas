@@ -23,7 +23,7 @@ public class ConexionBDD {
 public void conectar(){
     try {
         Class.forName("org.postgresql.Driver");
-        conexion=DriverManager.getConnection("jdbc:postgresql://localhost:5432/ejercicio_en_clase",user,password);
+        conexion=DriverManager.getConnection("jdbc:postgresql://localhost:5432/AsignacionCitas",user,password);
     }catch (SQLException | ClassNotFoundException e) {
         System.err.println("Error en conexion(conectar):" +e);
     }

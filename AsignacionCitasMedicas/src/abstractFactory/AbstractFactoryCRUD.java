@@ -10,6 +10,6 @@ public interface AbstractFactoryCRUD {
 	    public Create crearRegistro();
 	    public Delete deleteRegistro();
 	    public Read readRegistro();
-//	    public Update updateRegistro();
+	    //public Update updateRegistro();
 	
 }

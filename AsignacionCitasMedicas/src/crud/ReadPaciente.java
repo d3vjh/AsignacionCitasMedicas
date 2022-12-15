@@ -34,7 +34,7 @@ public class ReadPaciente implements Read{
 	public ArrayList<Object> operacionCrud() {
 		array = new ArrayList<Object>();
 		//El String toca actualizarlo
-		String sql = "select k_numiden, n_nombre, n_apellido from cli_compensar where k_numiden ='"+cedula+"';";
+		String sql = "select k_paciente, n_nombre, n_apellido, t_tipo_afiliacion from paciente where k_paciente ='"+cedula+"';";
 		conexion = ConexionBDD.getConexion();
 		try {
 			conexion.conectar();
@@ -44,6 +44,7 @@ public class ReadPaciente implements Read{
 				array.add(rs.getInt(1));
 				array.add(rs.getString(2));
 				array.add(rs.getString(3));
+				array.add(rs.getString(4));
 			}
 			conexion.desconectar();
 		} catch (SQLException e) {
