@@ -1,5 +1,7 @@
 package abstractFactory;
 
+import java.sql.Date;
+
 import crud.Create;
 import crud.CreatePaciente;
 import crud.Delete;
@@ -9,11 +11,42 @@ import crud.ReadPaciente;
 
 public class FabricaPaciente implements AbstractFactoryCRUD{
 
-	 private String cedulaPaciente;
-//	 private String nombre;
-//	 private String apellidos;
+	private String cedulaPaciente;
+	private String tipoDocumentoPaciente;
+	private int numeroDocumentoPaciente;
+	private int categoriaPaciente;
+	private String nombrePaciente;
+	private String apellidoPaciente;
+	private String tipoAfiliacion;
+	private String fechaNacimientoPaciente;
+	private long telefonoPaciente ; //-> Big int en lel motor BDD
+	private String correoPaciente;
+	private String sexoPaciente;
+		
+	private String tipoDocumentoAfiliado;
+	private int numeroDocumentoAfiliado;
 	
 	
+	
+	
+	public FabricaPaciente(int numeroDocumentoPaciente, String tipoDocumentoPaciente, int categoriaPaciente,
+			String nombrePaciente, String apellidoPaciente, String tipoAfiliacion, String fechaNacimientoPaciente,
+			long telefonoPaciente, String correoPaciente, String sexoPaciente, String tipoDocumentoAfiliado,
+			int numeroDocumentoAfiliado) {
+		this.tipoDocumentoPaciente = tipoDocumentoPaciente;
+		this.numeroDocumentoPaciente = numeroDocumentoPaciente;
+		this.categoriaPaciente = categoriaPaciente;
+		this.nombrePaciente = nombrePaciente;
+		this.apellidoPaciente = apellidoPaciente;
+		this.tipoAfiliacion = tipoAfiliacion;
+		this.fechaNacimientoPaciente = fechaNacimientoPaciente;
+		this.telefonoPaciente = telefonoPaciente;
+		this.correoPaciente = correoPaciente;
+		this.sexoPaciente = sexoPaciente;
+		this.tipoDocumentoAfiliado = tipoDocumentoAfiliado;
+		this.numeroDocumentoAfiliado = numeroDocumentoAfiliado;
+	}
+
 	public FabricaPaciente(String cedula) {
         this.cedulaPaciente=cedula;
     }
@@ -26,7 +59,10 @@ public class FabricaPaciente implements AbstractFactoryCRUD{
 	@Override
 	public Create crearRegistro() {
 		// TODO Auto-generated method stub
-		return new CreatePaciente(cedulaPaciente);
+		return new CreatePaciente(numeroDocumentoPaciente, tipoDocumentoPaciente, 
+				categoriaPaciente, nombrePaciente, apellidoPaciente, tipoAfiliacion, 
+				fechaNacimientoPaciente, telefonoPaciente, correoPaciente, sexoPaciente, tipoDocumentoAfiliado, 
+				numeroDocumentoAfiliado);
 	}
 	
 	@Override

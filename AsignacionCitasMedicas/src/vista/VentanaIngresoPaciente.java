@@ -1,10 +1,10 @@
 package vista;
 
-import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 import abstractFactory.AbstractFactoryCRUD;
 import abstractFactory.FabricaPaciente;
-import crud.Read;
+import crud.Create;
 
 public class VentanaIngresoPaciente extends javax.swing.JFrame {
 
@@ -248,13 +248,45 @@ public class VentanaIngresoPaciente extends javax.swing.JFrame {
 
 	private void crearActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_crearActionPerformed
 		// TODO add your handling code here:
+
+		
+		
 		AbstractFactoryCRUD miFabrica;
-		Read read;
-		miFabrica = new FabricaPaciente("100104");
-		read = miFabrica.readRegistro();
-		ArrayList<Object> arrTemp = read.operacionCrud();
-		System.out.println("Codigo"+arrTemp.get(0)+"\n Nombre: "+ arrTemp.get(1)+"\nApellido " +arrTemp.get(2)+"\n Tipo de afiliacion: "+arrTemp.get(3));
-		System.out.println("Holaaa mundo");
+		Create create;
+		miFabrica = new FabricaPaciente(Integer.parseInt(numero_documento.getText()), 
+				tipo_documento.getText(), 
+				Integer.parseInt(categoria.getText()), 
+				nombre.getText(), apellido.getText(), 
+				tipo.getText(), 
+				fecha_nacimiento.getText(),
+				Long.parseLong(telefono.getText()), 
+				correo.getText(), 
+				sexo.getText(),
+				tipo_documento_afiliado.getText(),
+				Integer.parseInt( numero_documento_afiliado.getText())
+				);
+		create = miFabrica.crearRegistro();
+		create.operacionCrud();
+		
+		String test = Integer.parseInt(numero_documento.getText())+"\n"+ 
+				tipo_documento.getText()+ "\n"+
+				Integer.parseInt(categoria.getText())+ "\n"+
+				nombre.getText()+"\n"+ apellido.getText()+ "\n"+
+				tipo.getText()+"\n"+
+				fecha_nacimiento.getText()+"\n"+
+				Long.parseLong(telefono.getText())+ "\n"+
+				correo.getText()+"\n"+
+				sexo.getText()+"\n"+
+				tipo_documento_afiliado.getText()+"\n"+
+				Integer.parseInt( numero_documento_afiliado.getText());
+		
+		System.out.println(test);
+		
+		System.out.println("Si llego hasta acá");
+//		read = miFabrica.readRegistro();
+//		ArrayList<Object> arrTemp = read.operacionCrud();
+//		System.out.println("Codigo"+arrTemp.get(0)+"\n Nombre: "+ arrTemp.get(1)+"\nApellido " +arrTemp.get(2)+"\n Tipo de afiliacion: "+arrTemp.get(3));
+//		System.out.println("Holaaa mundo");
 	}// GEN-LAST:event_crearActionPerformed
 
 	private void numero_documento_afiliadoActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_numero_documento_afiliadoActionPerformed

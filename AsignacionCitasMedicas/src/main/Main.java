@@ -17,7 +17,12 @@ public class Main {
 		vi.setVisible(true);
 		
 		
-		
+		AbstractFactoryCRUD miFabrica;
+		Read read;
+		miFabrica = new FabricaPaciente("100104");
+		read = miFabrica.readRegistro();
+		ArrayList<Object> arrTemp = read.operacionCrud();
+		System.out.println("Codigo"+arrTemp.get(0)+"\n Nombre: "+ arrTemp.get(1)+"\nApellido " +arrTemp.get(2)+"\n Tipo de afiliacion: "+arrTemp.get(3));
 		
 		
 		
